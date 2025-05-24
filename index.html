@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<link rel="stylesheet" href="./style.css">
+
+	<title>PI UNIVESP</title>
+
+</head>
+
+<body>
+	<div id="content">
+		<section id="menu">
+			<div class="container">
+				<img class="logotipo" src="./IMAGENS/download.png">
+				<h1 class="entrada">CONTROLE DE PATRIMÔNIO</h1>
+				<h2 class="subtitulo"> MENU </h2>
+				<a>
+					<nav>
+						<ul>
+							<li><a href="#ativo" class="actived">Patrimônio Ativo</a></li>
+							<li><a href="#desuso" class="actived">Patrimônio Desuso</a></li>
+							<li><a href="#despachado" class="actived">Patrimônio Despachado</a></li>
+							<li><a href="#contato" class="actived">Contato</a></li>
+						</ul>
+					</nav>
+				</a>
+			</div>
+
+			<section id="ativo">
+				<div class="project-container">
+					<form id="formAtivo" class="form">
+						<h1 class="title">PATRIMÔNIO ATIVO</h1>
+						<div>
+							<label for="numero" class="pat">PATRIMÔNIO *</label>
+							<input type="text" id="numero" placeholder="Digite apenas Nºs" name="numero" maxlength="9" required autocomplete="off" />
+							<label for="date" class="date">DATA DE ENTRADA *</label>
+							<input type="date" id="date" placeholder="xx/xx/xx" name="date" required />
+							<label for="tipo" class="tipo"><strong>ORIGEM *</strong></label>
+							<select name="TIPO" id="tipo" required>
+								<option value="">Procedência</option>
+								<option>COMPRA</option>
+								<option>CESSÃO</option>
+								<option>DOAÇÃO</option>
+								<option>EMPRÉSTIMO</option>
+								<option>ALMOXARIFADO</option>
+							</select>
+						</div>
+						<div>
+							<label for="datedev" class="datadev">DATA DE DEVOLUÇÃO</label>
+							<input type="date" class="datedev" id="datedev" placeholder="xx/xx/xx" name="date" />
+							<label for="local" class="local"><strong>LOCAL *</strong></label>
+							<select name="local" id="local" required>
+								<option value="">Local</option>
+								<option>SALÃO</option>
+								<option>ESCRITÓRIO</option>
+								<option>SALA1</option>
+								<option>SALA2</option>
+								<option>SALA3</option>
+							</select>
+							<label for="estado" class="estado"><strong>SITUAÇÃO *</strong></label>
+							<select name="estado" id="estado" required>
+								<option value="">Situação</option>
+								<option>ÓTIMO</option>
+								<option>BOM</option>
+								<option>REGULAR </option>
+								<option>RUIM</option>
+								<option>PÉSSIMO</option>
+							</select>
+							<div class="calculo">
+								<label for="valor" class="valor">VALOR *</label>
+								<label for="valor" class="money">R$</label>
+								<input type="number" id="valor" class="valor" name="valor" min="0.01" max="1000000" step="0.01" required />
+								<label for="vida" class="util">VIDA ÚTIL *<span style="font-size: 20px"> - em anos</span></label>
+								<input type="number" id="vida" class="vida" name="vida" required />
+								<button id="botao" type="button" class="botao" onclick="clicar()">CALCULAR</button>
+								<label for="resultado" class="correcao">VALOR CORRIGIDO</label>
+								<label for="resultado" class="dinheiro">R$</label>
+								<input name="resultado" readonly id="resultado">
+							</div>
+							<div>
+								<label for="reparo" class="reparo">NECESSITA REPARO</label>
+								<label for="repsim" id="sim">SIM</label>
+								<input type="radio" name="reparo" id="repsim" checked>
+								<label for="repnao" id="nao">NÃO</label>
+								<input type="radio" name="reparo" id="repnao">
+								<label for="reparo" class="reparo">CONDIÇÕES PARA REPARO</label>
+								<label for="repsim" id="sim">SIM</label>
+								<input type="radio" name="condic" id="repsim" checked>
+								<label for="repnao" id="nao">NÃO</label>
+								<input type="radio" name="condic" id="repnao">
+							</div>
+							<div>
+								<label for="reparo" class="reparo">MANUTENÇÃO</label>
+								<label for="repsim" id="sim">SIM</label>
+								<input type="radio" name="manut" id="repsim" checked>
+								<label for="repnao" id="nao">NÃO</label>
+								<input type="radio" name="manut" id="repnao">
+								<label for="tipo" class="tipo2"><strong>TIPO</strong></label>
+								<select name="TIPO" id="tipo2">
+									<option selected value="">Selecione</option>
+									<option>TROCA DE PEÇA</option>
+									<option>PINTURA</option>
+									<option>LIMPEZA</option>
+									<option>ATUALIZAÇÃO</option>
+								</select>
+							</div>
+						</div>
+						<div>
+							<label for="desc1" class="desc1">DESCRIÇÃO</label>
+							<textarea placeholder="OBJETO" id="desc1" name="desc1" cols="50" rows="10"></textarea>
+							<label for="desc2" class="desc2">INVENTARIANTE</label>
+							<textarea placeholder="OBJETO" id="desc2" name="desc1" cols="50" rows="10"></textarea>
+							<label for="desc3" class="desc3">LOCAL</label>
+							<textarea placeholder="OBJETO" id="desc3" name="desc1" cols="50" rows="10"></textarea>
+						</div>
+						<div class="btn">
+							<button type="submit" id="botao1" class="botao1">SALVAR</button>
+							<button type="reset" id="botao2" class="botao2">LIMPAR</button>
+							<a href="#menu" class="botao3">RETORNAR</a>
+						</div>
+					</form>
+				</div>
+			</section>
+
+			<section id="desuso">
+				<div class="hero-container">
+					<form class="form">
+						<h1 class="title">PATRIMÔNIO DESUSO</h1>
+						<div>
+							<label for="numero" class="pat">PATRIMÔNIO</label>
+							<input type="text" id="numero" placeholder="Digite apenas Nºs" name="numero" maxlength="9"
+								autocomplete="off" />
+							<label for="date" class="date">DATA DE ENTRADA</label>
+							<input type="date" id="date" placeholder="xx/xx/xx" name="date" />
+							<label for="tipo" class="tipo"><strong>ORIGEM</strong></label>
+							<select name="TIPO" id="tipo">
+								<option selected value="">Procedência</option>
+								<option>COMPRA</option>
+								<option>CESSÃO</option>
+								<option>DOAÇÃO</option>
+								<option>EMPRÉSTIMO</option>
+								<option>ALMOXARIFADO</option>
+							</select>
+						</div>
+						<div>
+							<label for="datedev" class="datadev">DATA DE DEVOLUÇÃO</label>
+							<input type="date" class="datedev" id="datedev" placeholder="xx/xx/xx" name="date" />
+							<label for="local" class="local"><strong>LOCAL</strong></label>
+							<select name="local" id="local">
+								<option selected value="">Local</option>
+								<option>SALÃO</option>
+								<option>ESCRITÓRIO</option>
+								<option>SALA1</option>
+								<option>SALA2</option>
+								<option>SALA3</option>
+							</select>
+							<label for="estado" class="estado"><strong>SITUAÇÃO</strong></label>
+							<select name="estado" id="estado">
+								<option selected value="">Situação</option>
+								<option>ÓTIMO</option>
+								<option>BOM</option>
+								<option>REGULAR </option>
+								<option>RUIM</option>
+								<option>PÉSSIMO</option>
+							</select>
+							<div class="calcular">
+								<label for="valor" class="num1">VALOR</label>
+								<label for="valor" class="money">R$</label>
+								<input type="number" id="num1" class="num1" name="valor" min="0.01" max="11"
+									step="0.01" />
+								<label for="util" class="util">VIDA ÚTIL<span style="font-size: 20px"> - em
+										anos</span></label>
+								<input type="number" id="num2" class="num2" name="vida" />
+								<button id="botao" type="button" class="botao" onclick="calcular()">CALCULAR</button>
+								<label for="resultadoII" class="correcao">VALOR CORRIGIDO</label>
+								<label for="resultadoII" class="dinheiro">R$</label>
+								<input name="resultadoII" readonly id="resultadoII">
+							</div>
+							<div>
+								<label for="reparo" class="reparo">NECESSITA REPARO</label>
+								<label for="repsim" id="sim">SIM</label>
+								<input type="radio" name="reparo" id="repsim" checked>
+								<label for="repnao" id="nao">NÃO</label>
+								<input type="radio" name="reparo" id="repnao">
+								<label for="reparo" class="reparo">CONDIÇÕES PARA REPARO</label>
+								<label for="repsim" id="sim">SIM</label>
+								<input type="radio" name="condic" id="repsim" checked>
+								<label for="repnao" id="nao">NÃO</label>
+								<input type="radio" name="condic" id="repnao">
+							</div>
+							<div>
+								<label for="reparo" class="reparo">MANUTENÇÃO</label>
+								<label for="repsim" id="sim">SIM</label>
+								<input type="radio" name="manut" id="repsim" checked>
+								<label for="repnao" id="nao">NÃO</label>
+								<input type="radio" name="manut" id="repnao">
+								<label for="tipo" class="tipo2"><strong>TIPO</strong></label>
+								<select name="TIPO" id="tipo">
+									<option selected value="">Selecione</option>
+									<option>TROCA DE PEÇA</option>
+									<option>PINTURA</option>
+									<option>LIMPEZA</option>
+									<option>ATUALIZAÇÃO</option>
+								</select>
+							</div>
+						</div>
+						<div>
+							<label for="desc1" class="desc1">DESCRIÇÃO</label>
+							<textarea placeholder="OBJETO" id="desc1" name="desc1" cols="50" rows="10"></textarea>
+							<label for="desc2" class="desc2">INVENTARIANTE</label>
+							<textarea placeholder="OBJETO" id="desc2" name="desc1" cols="50" rows="10"></textarea>
+							<label for="desc3" class="desc3">LOCAL</label>
+							<textarea placeholder="OBJETO" id="desc3" name="desc1" cols="50" rows="10"></textarea>
+						</div>
+						<div class="btn">
+							<button type="submit" id="botao1" class="botao1">SALVAR</button>
+							<button type="reset" id="botao2" class="botao2">LIMPAR</button>
+							<a href="#menu" class="botao3">RETORNAR</a>
+						</div>
+					</form>
+				</div>
+			</section>
+
+			<section id="despachado">
+				<div class="container-file">
+					<form class="form">
+						<h1 class="title">PATRIMÔNIO DESPACHADO</h1>
+						<div>
+							<label for="numero" class="pat">PATRIMÔNIO</label>
+							<input type="text" id="numero" placeholder="Digite apenas Nºs" name="numero" maxlength="9"
+								autocomplete="off" />
+							<label for="date" class="date">DATA DE ENTRADA</label>
+							<input type="date" id="date" placeholder="xx/xx/xx" name="date" />
+							<label for="tipo" class="tipo"><strong>ORIGEM</strong></label>
+							<select name="TIPO" id="tipo">
+								<option selected value="">Procedência</option>
+								<option>COMPRA</option>
+								<option>CESSÃO</option>
+								<option>DOAÇÃO</option>
+								<option>EMPRÉSTIMO</option>
+								<option>ALMOXARIFADO</option>
+							</select>
+						</div>
+						<div>
+							<label for="datedev" class="datadev">DATA DE DEVOLUÇÃO</label>
+							<input type="date" class="datedev" id="datedev" placeholder="xx/xx/xx" name="date" />
+							<label for="local" class="local"><strong>LOCAL</strong></label>
+							<select name="local" id="local">
+								<option selected value="">Local</option>
+								<option>SALÃO</option>
+								<option>ESCRITÓRIO</option>
+								<option>SALA1</option>
+								<option>SALA2</option>
+								<option>SALA3</option>
+							</select>
+							<label for="estado" class="estado"><strong>SITUAÇÃO</strong></label>
+							<select name="estado" id="estado">
+								<option selected value="">Situação</option>
+								<option>ÓTIMO</option>
+								<option>BOM</option>
+								<option>REGULAR </option>
+								<option>RUIM</option>
+								<option>PÉSSIMO</option>
+							</select>
+							<div class="calcular">
+								<label for="valor" class="num3">VALOR</label>
+								<label for="valor" class="money">R$</label>
+								<input type="number" id="num3" class="num3" name="valor" min="0.01" max="11"
+									step="0.01" />
+								<label for="util" class="util">VIDA ÚTIL<span style="font-size: 20px"> - em
+										anos</span></label>
+								<input type="number" id="num4" class="num4" name="vida" />
+								<button id="botao" type="button" class="botao" onclick="calcular()">CALCULAR</button>
+								<label for="resultadoIII" class="correcao">VALOR CORRIGIDO</label>
+								<label for="resultadoIII" class="dinheiro">R$</label>
+								<input name="resultadoIII" readonly id="resultadoIII">
+							</div>
+							<div>
+								<label for="reparo" class="reparo">NECESSITA REPARO</label>
+								<label for="repsim" id="sim">SIM</label>
+								<input type="radio" name="reparo" id="repsim" checked>
+								<label for="repnao" id="nao">NÃO</label>
+								<input type="radio" name="reparo" id="repnao">
+
+								<label for="repare" class="repare">CONDIÇÕES PARA REPARO</label>
+								<label for="repsim" id="sim">SIM</label>
+								<input type="radio" name="repare" id="repsim" checked>
+								<label for="repnao" id="nao">NÃO</label>
+								<input type="radio" name="repare" id="repnao">
+
+								<label for="dates" class="date">DATA DE SAÍDA</label>
+								<input type="date" id="dates" placeholder="xx/xx/xx" name="dates" />
+								<div>
+									<label for="reparo" class="reparo">MANUTENÇÃO</label>
+									<label for="repsim" id="sim">SIM</label>
+									<input type="radio" name="manut" id="repsim" checked>
+									<label for="repnao" id="nao">NÃO</label>
+									<input type="radio" name="manut" id="repnao">
+									<label for="tipo" class="tipo2"><strong>TIPO</strong></label>
+									<select name="TIPO" id="tipo">
+										<option selected value="">Selecione</option>
+										<option>TROCA DE PEÇA</option>
+										<option>PINTURA</option>
+										<option>LIMPEZA</option>
+										<option>ATUALIZAÇÃO</option>
+									</select>
+								</div>
+							</div>
+							<div>
+								<label for="desc1" class="desc1">DESCRIÇÃO</label>
+								<textarea placeholder="OBJETO" id="desc1" name="desc1" cols="50" rows="10"></textarea>
+								<label for="desc2" class="desc2">INVENTARIANTE</label>
+								<textarea placeholder="OBJETO" id="desc2" name="desc1" cols="50" rows="10"></textarea>
+								<label for="desc3" class="desc3">LOCAL</label>
+								<textarea placeholder="OBJETO" id="desc3" name="desc1" cols="50" rows="10"></textarea>
+								<label for="desc4" class="desc4">LOCAL DE ENVIO</label>
+								<textarea placeholder="OBJETO" id="desc4" name="desc1" cols="50" rows="10"></textarea>
+								<label for="desc5" class="desc5">RECEBIDO POR </label>
+								<textarea placeholder="OBJETO" id="desc5" name="desc1" cols="50" rows="10"></textarea>
+							</div>
+							<div class="btn3">
+								<button type="submit" id="botaoA" class="botaoA" value="decline">SALVAR</button>
+								<button type="reset" id="botaoB" class="botaoB" value="decline">LIMPAR</button>
+								<a href="#menu" class="botaoC">RETORNAR</a>
+							</div>
+						</div>
+					</form>
+				</div>
+			</section>
+
+			<section id="contato">
+				<div class="contact">
+					<form action="https://formsubmit.co/your@email.com" method="POST" class="form">
+						<h1 class="title">Entre em contato</h1>
+
+						<label for="nome" class="nome">NOME</label>
+						<input type="text" id="nome" placeholder="Digite seu nome" name="nome" maxlength="15"
+							autocomplete="off" />
+						<label for="fone" class="fone">CELULAR</label>
+						<input type="tel" id="foneid" placeholder="(xx)xx-xx-xx-xx" name="fone" autocomplete="off" />
+						<label for="email" class="emailid"><strong>EMAIL</strong></label>
+						<input type="email" id="email" placeholder="fulano@gmail.com" name="email" autocomplete="off" />
+						<label for="desc6" class="desc6">DIGITE SUA MENSAGEM </label>
+						<textarea placeholder="MENSAGEM" id="desc6" name="desc6 cols=" 50" rows="10"></textarea>
+						<div>
+							<button type="submit" id="botaoD" class="botaoD">SALVAR</button>
+							<button type="reset" id="botaoE" class="botaoE">LIMPAR</button>
+							<a href="#menu" class="botaoF">RETORNAR</a>
+						</div>
+					</form>
+				</div>
+			</section>
+	</div>
+	<script type="module" src="./script.js"></script>
+</body>
+
+</html>
