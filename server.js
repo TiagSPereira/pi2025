@@ -19,6 +19,11 @@ app.use((req, res, next) => {
     next();
 });
 
+// Servir arquivos estáticos da pasta public
+const publicPath = path.join(__dirname, 'public');
+console.log('Diretório de arquivos estáticos:', publicPath);
+app.use(express.static(publicPath));
+
 // Conexão com o banco de dados
 const db = new sqlite3.Database('./patrimonio.db', (err) => {
     if (err) {
@@ -153,7 +158,9 @@ app.get('/api/patrimonio-ativo', (req, res) => {
 // Rota para a página principal
 app.get('/', (req, res) => {
     console.log('Acessando rota principal');
-    res.sendFile(path.join(__dirname, 'public', 'index.html'));
+    const indexPath = path.join(publicPath, 'index.html');
+    console.log('Caminho do index.html:', indexPath);
+    res.sendFile(indexPath);
 });
 
 // Rota de fallback para todas as outras requisições
@@ -172,5 +179,5 @@ app.use((err, req, res, next) => {
 app.listen(port, '0.0.0.0', () => {
     console.log(`Servidor rodando em http://0.0.0.0:${port}`);
     console.log(`Diretório atual: ${__dirname}`);
-    console.log(`Arquivos estáticos em: ${path.join(__dirname, 'public')}`);
+    console.log(`Arquivos estáticos em: ${publicPath}`);
 }); 

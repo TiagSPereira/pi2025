@@ -25,7 +25,7 @@ checkDirectory(path.join(__dirname, 'public'));
 const requiredFiles = [
     'public/index.html',
     'public/script.js',
-    'public/styles.css'
+    'public/style.css'
 ];
 
 console.log('\nVerificando arquivos necessários:');
