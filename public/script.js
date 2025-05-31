@@ -133,7 +133,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
 				// Enviar dados para o servidor
 				console.log('Enviando dados para o servidor...');
-				const response = await fetch('http://localhost:3000/api/patrimonio-ativo', {
+				const response = await fetch('http://127.0.0.1:3000/api/patrimonio-ativo', {
 					method: 'POST',
 					headers: {
 						'Content-Type': 'application/json'
