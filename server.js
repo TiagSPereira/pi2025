@@ -4,7 +4,7 @@ const sqlite3 = require('sqlite3').verbose();
 const path = require('path');
 
 const app = express();
-const port = process.env.PORT || 3000;
+const port = process.env.PORT || 3001;
 
 // Configuração do CORS mais permissiva para desenvolvimento
 app.use(cors({
@@ -179,8 +179,8 @@ app.use((err, req, res, next) => {
 });
 
 // Iniciar o servidor
-app.listen(port, '0.0.0.0', () => {
-    console.log(`Servidor rodando em http://0.0.0.0:${port}`);
+app.listen(port, () => {
+    console.log(`Servidor rodando na porta ${port}`);
     console.log(`Diretório atual: ${__dirname}`);
     console.log(`Arquivos estáticos em: ${publicPath}`);
 }); 
