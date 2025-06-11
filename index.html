@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<link rel="stylesheet" href="./style.css">
+
+	<title>PI UNIVESP</title>
+
+</head>
+
+<body>
+	<div id="content">
+		<section id="menu">
+			<div class="container">
+				<img class="logotipo" src="./IMAGENS/download.png">
+				<h1 class="entrada">CONTROLE DE PATRIMÔNIO</h1>
+				<h2 class="subtitulo"> MENU </h2>
+				<a>
+					<nav>
+						<ul>
+							<li><a href="#ativo" class="actived">Patrimônio Ativo</a></li>
+							<li><a href="#desuso" class="actived">Patrimônio Desuso</a></li>
+							<li><a href="#despachado" class="actived">Patrimônio Despachado</a></li>
+							<li><a href="#contato" class="actived">Contato</a></li>
+						</ul>
+					</nav>
+				</a>
+			</div>
+
+			<section id="ativo">
+				<div class="project-container">
+					<form class="form">
+						<h1 class="title">PATRIMÔNIO ATIVO</h1>
+						<div>
+							<label for="numero" class="pat">PATRIMÔNIO</label>
+							<input type="text" id="numero" placeholder="Digite apenas Nºs" name="numero" maxlength="9"
+								autocomplete="off" />
+							<label for="date" class="date">DATA DE ENTRADA</label>
+							<input type="date" id="date" placeholder="xx/xx/xx" name="date" />
+							<label for="tipo" class="tipo"><strong>ORIGEM</strong></label>
+							<select name="TIPO" id="tipo">
+								<option selected value="">Procedência</option>
+								<option>COMPRA</option>
+								<option>CESSÃO</option>
+								<option>DOAÇÃO</option>
+								<option>EMPRÉSTIMO</option>
+								<option>ALMOXARIFADO</option>
+							</select>
+						</div>
+						<div>
+							<label for="datedev" class="datadev">DATA DE DEVOLUÇÃO</label>
+							<input type="date" class="datedev" id="datedev" placeholder="xx/xx/xx" name="date" />
+							<label for="local" class="local"><strong>LOCAL</strong></label>
+							<select name="local" id="local">
+								<option selected value="">Local</option>
+								<option>SALÃO</option>
+								<option>ESCRITÓRIO</option>
+								<option>SALA1</option>
+								<option>SALA2</option>
+								<option>SALA3</option>
+							</select>
+							<label for="estado" class="estado"><strong>SITUAÇÃO</strong></label>
+							<select name="estado" id="estado">
+								<option selected value="">Situação</option>
+								<option>ÓTIMO</option>
+								<option>BOM</option>
+								<option>REGULAR </option>
+								<option>RUIM</option>
+								<option>PÉSSIMO</option>
+							</select>
+							<div class="calculo">
+								<label for="valor" class="valor">VALOR</label>
+								<label for="valor" class="money">R$</label>
+								<input type="number" id="valor" class="valor" name="valor" min="0.01" max="1000000000"
+									step="0.01" />
+								<label for="vida" class="util">VIDA ÚTIL<span style="font-size: 20px"> - em
+										anos</span></label>
+								<input type="number" id="vida" class="vida" name="vida" />
+								<button id="botao" type="button" class="botao" onclick="clicar()">CALCULAR</button>
+								<label for="resultado" class="correcao">VALOR CORRIGIDO</label>
+								<label for="resultado" class="dinheiro">R$</label>
+								<input name="resultado" readonly id="resultado">
+							</div>
+							<div>
+								<label for="reparo" class="reparo">NECESSITA REPARO</label>
+								<label for="repsim" id="sim">SIM</label>
+								<input type="radio" name="reparo" id="repsim" checked>
+								<label for="repnao" id="nao">NÃO</label>
+								<input type="radio" name="reparo" id="repnao">
+								<label for="reparo" class="reparo">CONDIÇÕES PARA REPARO</label>
+								<label for="repsim" id="sim">SIM</label>
+								<input type="radio" name="condic" id="repsim" checked>
+								<label for="repnao" id="nao">NÃO</label>
+								<input type="radio" name="condic" id="repnao">
+							</div>
+							<div>
+								<label for="reparo" class="reparo">MANUTENÇÃO</label>
+								<label for="repsim" id="sim">SIM</label>
+								<input type="radio" name="manut" id="repsim" checked>
+								<label for="repnao" id="nao">NÃO</label>
+								<input type="radio" name="manut" id="repnao">
+								<label for="tipo" class="tipo2"><strong>TIPO</strong></label>
+								<select name="TIPO" id="tipo2">
+									<option selected value="">Selecione</option>
+									<option>TROCA DE PEÇA</option>
+									<option>PINTURA</option>
+									<option>LIMPEZA</option>
+									<option>ATUALIZAÇÃO</option>
+								</select>
+							</div>
+						</div>
+						<div>
+							<label for="desc1" class="desc1">DESCRIÇÃO</label>
+							<textarea placeholder="OBJETO" id="desc1" name="desc1" cols="50" rows="10"></textarea>
+							<label for="desc2" class="desc2">INVENTARIANTE</label>
+							<textarea placeholder="OBJETO" id="desc2" name="desc1" cols="50" rows="10"></textarea>
+							<label for="desc3" class="desc3">LOCAL</label>
+							<textarea placeholder="OBJETO" id="desc3" name="desc1" cols="50" rows="10"></textarea>
+						</div>
+						<div class="btn">
+							<button type="submit" id="botao1" class="botao1">SALVAR</button>
+							<button type="reset" id="botao2" class="botao2">LIMPAR</button>
+							<a href="#menu" class="botao3">RETORNAR</a>
+						</div>
+					</form>
+				</div>
+				<script src="./script.js"></script>
+			</section>			
+</body>
+
+</html>
